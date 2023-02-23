@@ -1,0 +1,51 @@
+<style>
+    .ujas {
+        background-color: burlywood;
+        width: 500px;
+        height: 500px;
+    }
+    button{
+        height: 50px;
+        width: 100px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        position: relative;
+        left: 400px;
+        top: 20px;
+        font-size: 20px;
+    }
+</style>
+<div class="ujas">
+<button (click) = "click('ujas','abhay')" >click me</button>
+name : <input type="text" #my (keyup) = "getdata(my.value)" placeholder="enter the text"><br>
+<input type="text" #my1 (keydown) = "getdata(my1.value)" placeholder="enter the text">
+</div> 
+<h1 *ngIf = "show;then x else y">my name is ujas</h1>
+<ng-template #x><h1>hello</h1></ng-template>
+<ng-template #y><h1 >i am from amreli</h1></ng-template>
+
+<ng-template [ngIf] = "city=='jaypur'">i am from jaypur</ng-template>
+
+<ng-template [ngIf] = "city=='amreli'">i am from amreli</ng-template>
+
+<ng-template [ngIf] = "city=='ahmedabad'">i am from ahmedabad</ng-template>
+
+<div [ngSwitch] = "weight" class="stack">
+<h1 *ngSwitchCase = "'1'">10kg</h1>
+<h1 *ngSwitchCase = "'2'">20kg</h1>
+<h1 *ngSwitchCase = "'3'">30kg</h1>
+<h1 *ngSwitchCase = "'4'">40kg</h1>
+<h1 *ngSwitchCase = "'5'">50kg</h1>
+<h1 *ngSwitchCase = "'6'">60kg</h1>
+<h1 *ngSwitchDefault style="background-color: black;color: white;">No age found</h1>
+</div>
+
+<ul *ngFor = "let i of array">
+<li >name : {{i.name}}, salary : {{i.salary}}, address : {{i.address}}</li>
+<li>sociel account</li>
+<ul *ngFor = "let account of i.saccount">
+    <li>{{account}}</li>
+</ul>
+</ul>
+
